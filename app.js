@@ -1,12 +1,6 @@
-import { match } from "assert"
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  const cardArray = [        // TWO OF EACH for the game
-    {
-      name: 'blank',
-      img: 'images/blank.png'
-    },
+  const cardArray = [        // TWO OF EACH for the game, not for blank board or correct match !
     {
       name: 'cheeseburger',
       img: 'images/cheeseburger.png'
@@ -32,14 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
       img: 'images/pizza.png'
     },
     {
-      name: 'white',
-      img: 'images/white.png'
-    },
-    {
-      name: 'blank',
-      img: 'images/blank.png'
-    },
-    {
       name: 'cheeseburger',
       img: 'images/cheeseburger.png'
     },
@@ -62,16 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'pizza',
       img: 'images/pizza.png'
-    },
-    {
-      name: 'white',
-      img: 'images/white.png'
-    },
+    }
   ]
 
   cardArray.sort(() => 0.5 - Math.random())
 
-  const grid = document.querySelector('.grid')   // div from html picked up
+  const grid = document.querySelector('.grid')                  // div from html picked up
   const resultDisplay = document.querySelector('#result')
   var cardsChosen = []
   var cardsChosenId = []
