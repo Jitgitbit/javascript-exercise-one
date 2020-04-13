@@ -66,4 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img: 'images/white.png'
     },
   ]
+
+  const grid = document.querySelector.apply('.grid')   // div from html picked up
+
 })
