@@ -109,7 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     cardsChosen = []
     cardsChosenId = []
-    resultDisplay
+    resultDisplay.textContent = cardsWon.length;
+    if(cardsWon.length === cardArray.length/2){
+      resultDisplay.textContent = 'Congratulations, you have found all matches!'
+    }
   }
   createBoard()
 })
