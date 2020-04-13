@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   ]
 
+  cardArray.sort(() => 0.5 - Math.random())
+
   const grid = document.querySelector('.grid')   // div from html picked up
   const resultDisplay = document.querySelector('#result')
   var cardsChosen = []
