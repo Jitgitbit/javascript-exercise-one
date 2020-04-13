@@ -1,3 +1,5 @@
+import { match } from "assert"
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const cardArray = [        // TWO OF EACH for the game
@@ -68,8 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 
   const grid = document.querySelector('.grid')   // div from html picked up
+  const resultDisplay = document.querySelector('#result')
   var cardsChosen = []
   var cardsChosenId = []
+  var cardsWon = []
 
   function createBoard(){
     for(let i = 0; i < cardArray.length; i++){
@@ -88,6 +92,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if(cardsChosen.length === 2){
       setTimeout(checkForMatch, 500)
     }
+  }
+  function checkForMatch(){
+    var cards = document.querySelectorAll('img')
+    const optionOneId = cardsChosenId[0]
+    const optionTwoId = cardsChosenId[1]
+    if(cardsChosen[0] === cardsChosen[1]){
+      alert('You found a match!')
+      cards[optionOneId].setAttribute('src', 'images/white.png')
+      cards[optionTwoId].setAttribute('src', 'images/white.png')
+      cardsWon.push(cardsChosen);
+    }else{
+      cards[optionOneId].setAttribute('src', 'images/blank.png')
+      cards[optionTwoId].setAttribute('src', 'images/blank.png')
+      alert("Sorry, that's not a match, try again")
+    }
+    cardsChosen = []
+    cardsChosenId = []
+    resultDisplay
   }
   createBoard()
 })
